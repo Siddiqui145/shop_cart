@@ -5,9 +5,10 @@ class Product {
   final String title;
   final String description;
   final String thumbnail;
-  final double price;
+  final int price;
   final int discountPercentage;
   final String image;
+  int quantity;
 
 
 
@@ -19,10 +20,17 @@ Product({
   required this.price,
   required this.thumbnail,
   required this.image,
+  this.quantity = 1,
 });  
 
 factory Product.fromJson(Map<String,dynamic> json) {
-  return Product(id: json['id'], title: json['title'], description: json['description'], discountPercentage: json['discountPercentage'], price: json['price'], thumbnail: json['thumbnail'], image: json['images'][0],);
+  return Product(id: json['id'], 
+  title: json['title'], 
+  description: json['description'],
+   discountPercentage: json['discountPercentage'].toInt(), 
+   price: json['price'].toInt(),
+    thumbnail: json['thumbnail'], 
+    image: json['images'][0],);
 }
 
 double get finalPrice => price - (price * discountPercentage/100);

@@ -1,7 +1,7 @@
 
 
 import 'package:dio/dio.dart';
-import 'package:shop_cart/product.dart';
+import 'package:shop_cart/models/product.dart';
 
 class ProductRepository{
   final Dio dio = Dio();

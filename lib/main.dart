@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:shop_cart/splash_screen.dart';
+import 'package:shop_cart/screens/splash_screen.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
